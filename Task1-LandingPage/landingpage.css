@@ -1,0 +1,257 @@
+        body{
+            margin: 0;
+            background-color: rgb(255, 255, 255);
+        }
+        #header{
+            width: 100%;
+            height: 10%;
+            background-image: linear-gradient(to right,Black , rgb(0,49,64),Black);
+
+        }
+        #below-header{
+            width: 100%;
+            height: 10%;
+            background-color: white;
+        }
+        #Banner{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        #Banner-right{
+            width: 60%;
+            z-index: 0;
+        }
+        #Banner-left{
+            width: 60%;
+            z-index: 1;
+            background-color: rgb(0, 49, 64);
+        }
+        span{
+            color: rgb(250, 250, 250);
+        }
+        #Inside-Banner{
+            color:#A86E51;
+            width:100%;
+            border: 2px solid ;
+            text-align: center;
+            margin: 10% 0;
+            margin-left: 27px;
+            z-index: 2;
+            border-image: linear-gradient(to right, white, rgb(0,49,64),white) 1;
+            background-color: rgb(0, 49, 64);
+        }
+        #Inside-Banner ul li:before {
+             content: '✓';
+        }
+        ul li{
+            display: block;
+        }
+        #Below-Banner{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 20px 0px;
+        }
+        .characteristics{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        .upper{
+            height: 58%;
+            display: flex;
+            flex-direction: row;
+        }
+        .lower{
+            height: 50%;
+        }
+        .upper-left{
+            width: 30%;
+        }
+        .upper-left img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .upper-right{
+            width: 70%;
+        }
+        .upper-left img{
+            min-width: 90%;
+            min-height: 100%;
+            max-width: 90%;
+            max-height: 100%;
+        }
+        #aboutus{
+            display: flex;
+            flex-direction: row;
+        }
+        #aboutus-right{
+            width: 50%;
+        }
+        #aboutus-right img{
+            width: 100%;
+        }
+        #aboutus-left{
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        #inside-aboutus-left{
+            width: 80%;
+            height: 60%;
+            margin: 20% auto ;
+            padding: 10px;
+            background-color: rgb(173,169,149);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        #featured{
+            background-color: rgb(0, 49, 64);
+        }
+        #featured-inner{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .feature-item{
+            display:flex;
+            flex-direction: column;
+            width: 30%;
+            height: 70%;
+
+        }
+        .feature-item h3{
+            color: aliceblue;
+            font-weight: 100;
+            text-align: center;
+        }
+        .feature-item img{
+            min-width: 70%;
+            max-width: 70%;
+            min-height: 70%;
+            max-height :70%;
+            margin: auto;
+        }
+        .feature-item h1{
+            padding: 5px;
+            color: white;
+            text-align: center;
+        }
+        .lower p{
+            font-size: large;
+            text-align: center;
+        }
+        nav ul li{
+            display: inline-block;
+            margin: 0px 10px;
+            cursor: pointer;
+        }
+        nav{
+            float: right;
+            font-size: larger;
+        }
+        logo{
+            display: flex;
+            flex-direction: row;
+            width: 30%;
+            height: 100%;
+        }
+        #header a{
+            text-decoration: none;
+            color: white;
+            font-size: xx-large;
+            padding: 15px;
+            border: 1px solid white;
+            margin: -3;
+        }
+        #header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .contact{
+            display: flex;
+            flex-direction: row;
+            padding: 0px 10px;
+        }
+        #contacts{
+            display: flex;
+            flex-direction: row;
+            color: white;
+        }
+        #contacts a{
+            border: none;
+        }
+        logo h1{
+            background: linear-gradient(to right,rgb(0,49,64),#A86E51, rgb(0,49,64)); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text;        
+            font-size: 2em;
+            height: 100px;
+        }
+        #footer-bottom{
+            background-color: rgb(0, 49, 64);
+            color: whitesmoke;
+            height: 20%;
+        }
+        #footer-bottom h3{
+            padding:2.5%;
+        }
+@media screen and (max-width:800px){
+    #socials , #contacts {
+        display: none;
+    }
+    nav ul li{
+        display: block;
+    }
+    #Banner{
+        flex-direction: column;
+    }
+    #Banner-left{
+        width: 100%;
+    }
+    #Banner-right{
+        width: 100%;
+    }
+    #Inside-Banner{
+        margin: 0;
+    }
+    .lower{
+        display: none;
+    }
+    .upper{
+        flex-direction: column;
+        font-size: x-small;
+    }
+    .upper-left{
+        width: 100%;
+    }
+    .upper-right{
+        width: 100%;
+    }
+    .characteristics{
+        margin: 5px;
+    }
+    #Below-Banner{
+        justify-content: center;
+    }
+    #featured-inner{
+        flex-direction: column;
+    }
+    .feature-item{
+        width: 100%;
+    }
+    #aboutus-left{
+        width: 100%;
+    }
+    #aboutus-right{
+        display: none;
+    }
+    #aboutus{
+        flex-direction: column;
+    }
+    }

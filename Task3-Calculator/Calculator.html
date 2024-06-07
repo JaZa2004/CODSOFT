@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Calculator_Border{
+            background-color: 131212;
+            width: 30%;
+            height: 90%;
+            margin: auto;
+            border: 2px solid ;
+            display: grid;
+            gap: 5px;
+            grid-template-areas:
+            'header header header header'
+            'key key key key''key key key key''key key key key''key key key key'
+            'footer footer footer footer';
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .Calculator_number,.Calculator_operator , .Calculator_screen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: black;
+            margin: 5%;
+            height: 70%;
+            background-color: 1664C0;
+            border-radius: 10px;
+        }
+        .Calculator_operator{
+            background-color: #DB6B20;
+        }
+        .Calculator_screen{
+            background-color: black;
+        }
+        .Calculator_number{
+            background-color: E0D8D8;
+        }
+        #equals{
+            background-color: 1DBE1D;
+        }
+        #footer{
+            background-color: rgb(233,23,23);
+        }
+        .Calculator_screen{
+            height: 50px;
+        }
+        #header{
+            grid-area: header;
+            color: white;
+            border:2px solid;
+        }
+        #footer{
+            grid-area: footer;
+        }
+        .Calculator_number:hover , .Calculator_operator:hover , #footer:hover{
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var old_operator = null
+            var operator = null;
+            var a = null;
+            var b =null;
+            var header = document.getElementById("header");
+            var equals = document.getElementById("equals");
+            
+            var numbers = document.getElementsByClassName("Calculator_number");
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i].addEventListener("click", function() {
+                    header.innerText += this.innerText;
+                });
+            }
+            
+
+            var operators = document.getElementsByClassName("Calculator_operator");
+            for (var i = 0; i < operators.length; i++) {
+                if (operators[i].id !== "equals") {
+                    operators[i].addEventListener("click", function() {
+                        old_operator=operator;
+                        operator = this.innerText;
+                        if(a==null)
+                        a = parseFloat(header.innerText);
+                        else
+                        {
+                        if(old_operator=="+")
+                        a = a + parseFloat(header.innerText);
+                        else if(old_operator=="-")
+                        a = a - parseFloat(header.innerText);
+                        else if(old_operator=="/")
+                        a = a / parseFloat(header.innerText);
+                        else if(old_operator=="*")
+                        a = a * parseFloat(header.innerText);
+                        }
+                        header.innerText = '';
+                    });
+                }
+            }
+            
+
+            equals.addEventListener("click", function() {
+                b = parseFloat(header.innerText);
+                var result;
+                if (a!=null){
+                if (operator === '/') {
+                    result = a / b;
+                } else if (operator === '*') {
+                    result = a * b;
+                } else if (operator === '+') {
+                    result = a + b;
+                } else if (operator === '-') {
+                    result = a - b;
+                }
+                header.innerText = result;}
+                else
+                header.innerText = b;
+            });
+
+
+            document.getElementById("footer").addEventListener("click", function() {
+                header.innerText = '';
+                operator = null;
+                old_operator= null;
+                a = null;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="Calculator_Border">
+        <div class="Calculator_screen" id="header"></div>
+        <div class="Calculator_number">1</div>
+        <div class="Calculator_number">2</div>
+        <div class="Calculator_number">3</div>
+        <div class="Calculator_number">5</div>
+        <div class="Calculator_number">4</div>
+        <div class="Calculator_number">6</div>
+        <div class="Calculator_number">7</div>
+        <div class="Calculator_number">8</div>
+        <div class="Calculator_number">9</div>
+        <div class="Calculator_number">0</div> 
+        <div class="Calculator_number">.</div> 
+
+        <div class="Calculator_operator">/</div> 
+        <div class="Calculator_operator">*</div> 
+        <div class="Calculator_operator">+</div> 
+        <div class="Calculator_operator">-</div> 
+        <div class="Calculator_operator" id="equals">=</div>
+        <div class="Calculator_screen" id="footer">Clear</div> 
+
+    </div>
+</body>
+</html>
